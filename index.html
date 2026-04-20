@@ -46,7 +46,7 @@
         <main class="p-6 lg:p-12 max-w-7xl mx-auto w-full flex-grow">
             <div class="mb-10 flex items-center gap-4">
                 <div class="h-8 w-1.5 bg-blue-600 rounded-full shadow-[0_0_15px_#3b82f6]"></div>
-                <h3 class="text-2xl font-black uppercase tracking-widest italic">مجموعة beIN الكاملة</h3>
+                <h3 class="text-2xl font-black uppercase tracking-widest italic">مجموعة القنوات المختارة</h3>
             </div>
             
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="channelsGrid"></div>
@@ -75,63 +75,18 @@
     </div>
 
     <script>
-        // قائمة القنوات المحدثة ببيانات Ugeen و IDs الجديدة
         const channelList = [
-            { 
-                name: "الجزيرة الإخبارية", 
-                url: "https://live-hls-web-aja.getaj.net/AJA/index.m3u8", 
-                logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Aljazeera_Channel_Logo.svg/512px-Aljazeera_Channel_Logo.svg.png" 
-            },
-            { 
-                name: "beIN Sports 1", 
-                url: "http://ugeen.live:8080/live/Ugeen_VIPPXjsg8/xTW2gr/46.m3u8", 
-                logo: "https://f.top4top.io/p_3762grru10.png" 
-            },
-            { 
-                name: "beIN Sports 2", 
-                url: "http://ugeen.live:8080/live/Ugeen_VIPPXjsg8/xTW2gr/47.m3u8", 
-                logo: "https://g.top4top.io/p_3762av9801.png" 
-            },
-            { 
-                name: "beIN Sports 3", 
-                url: "http://ugeen.live:8080/live/Ugeen_VIPPXjsg8/xTW2gr/49.m3u8", 
-                logo: "https://h.top4top.io/p_3762eojug2.png" 
-            },
-            { 
-                name: "beIN Sports 4", 
-                url: "http://ugeen.live:8080/live/Ugeen_VIPPXjsg8/xTW2gr/50.m3u8", 
-                logo: "https://i.top4top.io/p_3762gavk33.png" 
-            },
-            { 
-                name: "BEIN MOVIES 1", 
-                url: "http://ugeen.live:8080/live/Ugeen_VIPPXjsg8/xTW2gr/24.m3u8", 
-                logo: "https://j.top4top.io/p_3762fiomz4.png" 
-            },
-            { 
-                name: "BEIN MOVIES 2", 
-                url: "http://ugeen.live:8080/live/Ugeen_VIPPXjsg8/xTW2gr/17.m3u8", 
-                logo: "https://j.top4top.io/p_3762fiomz4.png" 
-            },
-            { 
-                name: "BEIN MOVIES 3", 
-                url: "http://ugeen.live:8080/live/Ugeen_VIPPXjsg8/xTW2gr/18.m3u8", 
-                logo: "https://j.top4top.io/p_3762fiomz4.png" 
-            },
-            { 
-                name: "BEIN MOVIES 4", 
-                url: "http://ugeen.live:8080/live/Ugeen_VIPPXjsg8/xTW2gr/19.m3u8", 
-                logo: "https://j.top4top.io/p_3762fiomz4.png" 
-            },
-            { 
-                name: "BEIN SERIES 1", 
-                url: "http://ugeen.live:8080/live/Ugeen_VIPPXjsg8/xTW2gr/20.m3u8", 
-                logo: "https://k.top4top.io/p_3762d7moo5.png" 
-            },
-            { 
-                name: "BEIN SERIES 2", 
-                url: "http://ugeen.live:8080/live/Ugeen_VIPPXjsg8/xTW2gr/21.m3u8", 
-                logo: "https://k.top4top.io/p_3762d7moo5.png" 
-            }
+            { name: "الجزيرة الإخبارية", url: "https://live-hls-web-aja.getaj.net/AJA/index.m3u8", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Aljazeera_Channel_Logo.svg/512px-Aljazeera_Channel_Logo.svg.png" },
+            { name: "beIN Sports 1", url: "http://ugeen.live:8080/live/Ugeen_VIPPXjsg8/xTW2gr/46.m3u8", logo: "https://f.top4top.io/p_3762grru10.png" },
+            { name: "beIN Sports 2", url: "http://ugeen.live:8080/live/Ugeen_VIPPXjsg8/xTW2gr/47.m3u8", logo: "https://g.top4top.io/p_3762av9801.png" },
+            { name: "beIN Sports 3", url: "http://ugeen.live:8080/live/Ugeen_VIPPXjsg8/xTW2gr/49.m3u8", logo: "https://h.top4top.io/p_3762eojug2.png" },
+            { name: "beIN Sports 4", url: "http://ugeen.live:8080/live/Ugeen_VIPPXjsg8/xTW2gr/50.m3u8", logo: "https://i.top4top.io/p_3762gavk33.png" },
+            { name: "BEIN MOVIES 1", url: "http://ugeen.live:8080/live/Ugeen_VIPPXjsg8/xTW2gr/24.m3u8", logo: "https://j.top4top.io/p_3762fiomz4.png" },
+            { name: "BEIN MOVIES 2", url: "http://ugeen.live:8080/live/Ugeen_VIPPXjsg8/xTW2gr/17.m3u8", logo: "https://j.top4top.io/p_3762fiomz4.png" },
+            { name: "BEIN MOVIES 3", url: "http://ugeen.live:8080/live/Ugeen_VIPPXjsg8/xTW2gr/18.m3u8", logo: "https://j.top4top.io/p_3762fiomz4.png" },
+            { name: "BEIN MOVIES 4", url: "http://ugeen.live:8080/live/Ugeen_VIPPXjsg8/xTW2gr/19.m3u8", logo: "https://j.top4top.io/p_3762fiomz4.png" },
+            { name: "BEIN SERIES 1", url: "http://ugeen.live:8080/live/Ugeen_VIPPXjsg8/xTW2gr/20.m3u8", logo: "https://k.top4top.io/p_3762d7moo5.png" },
+            { name: "BEIN SERIES 2", url: "http://ugeen.live:8080/live/Ugeen_VIPPXjsg8/xTW2gr/21.m3u8", logo: "https://k.top4top.io/p_3762d7moo5.png" }
         ];
 
         let hlsInstance = null;
@@ -163,10 +118,6 @@
                         <img src="${c.logo}" class="max-w-full max-h-full object-contain pointer-events-none" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3208/3208094.png'">
                     </div>
                     <div class="font-black text-[10px] tracking-widest text-gray-200 uppercase">${c.name}</div>
-                    <div class="mt-2 flex items-center gap-1.5">
-                        <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
-                        <span class="text-[8px] font-black text-green-500 tracking-tighter uppercase italic">Live Now</span>
-                    </div>
                 </div>
             `).join('');
         }
@@ -176,21 +127,21 @@
             document.getElementById('currentChannelName').innerText = "بث مباشر: " + name;
             document.getElementById('loadingOverlay').classList.remove('hidden');
 
+            // استخدام البروكسي لكسر الحماية وضمان التشغيل عند الجميع
+            const finalUrl = url.includes('ugeen.live') ? "https://api.allorigins.win/raw?url=" + encodeURIComponent(url) : url;
+
             if (hlsInstance) { hlsInstance.destroy(); }
 
             if (Hls.isSupported()) {
-                hlsInstance = new Hls({ xhrSetup: function(xhr) { xhr.withCredentials = false; } });
-                hlsInstance.loadSource(url);
+                hlsInstance = new Hls();
+                hlsInstance.loadSource(finalUrl);
                 hlsInstance.attachMedia(videoElement);
                 hlsInstance.on(Hls.Events.MANIFEST_PARSED, () => {
                     document.getElementById('loadingOverlay').classList.add('hidden');
-                    videoElement.play().catch(() => console.log("Manual play required"));
-                });
-                hlsInstance.on(Hls.Events.ERROR, (event, data) => {
-                    if (data.fatal) { document.getElementById('loadingOverlay').classList.add('hidden'); }
+                    videoElement.play();
                 });
             } else if (videoElement.canPlayType('application/vnd.apple.mpegurl')) {
-                videoElement.src = url;
+                videoElement.src = finalUrl;
                 videoElement.play();
                 document.getElementById('loadingOverlay').classList.add('hidden');
             }
