@@ -46,7 +46,7 @@
         <main class="p-6 lg:p-12 max-w-7xl mx-auto w-full flex-grow">
             <div class="mb-10 flex items-center gap-4">
                 <div class="h-8 w-1.5 bg-blue-600 rounded-full shadow-[0_0_15px_#3b82f6]"></div>
-                <h3 class="text-2xl font-black uppercase tracking-widest italic">القنوات الجزائرية والعالمية</h3>
+                <h3 class="text-2xl font-black uppercase tracking-widest italic">مجموعة beIN الكاملة</h3>
             </div>
             
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="channelsGrid"></div>
@@ -75,47 +75,62 @@
     </div>
 
     <script>
-        // قائمة القنوات المضمونة (رسمية وتدوم طويلاً)
+        // قائمة القنوات المحدثة ببيانات Ugeen و IDs الجديدة
         const channelList = [
             { 
-                name: "البلاد الجزائرية", 
-                url: "https://cqr2aqt6.58103793.net:8443/hls/9cznqhfs9.m3u8", 
-                logo: "https://www.elbilad.net/static/images/logo.png" 
-            },
-            { 
-                name: "الشروق TV", 
-                url: "https://echourouk.itworksonline.net/echourouk/echourouk.smil/playlist.m3u8", 
-                logo: "https://a.top4top.io/p_37627ko340.png" 
-            },
-            { 
-                name: "beIN News", 
-                url: "https://list.iptvcat.com/my_list/s/06c69efb1bdaf8c9e49c91ae16a63ec6.m3u8", 
-                logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/BeIN_Sports_logo.svg/512px-BeIN_Sports_logo.svg.png" 
-            },
-            { 
-                name: "الجزيرة مباشر", 
+                name: "الجزيرة الإخبارية", 
                 url: "https://live-hls-web-aja.getaj.net/AJA/index.m3u8", 
                 logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Aljazeera_Channel_Logo.svg/512px-Aljazeera_Channel_Logo.svg.png" 
             },
             { 
-                name: "سكاي نيوز", 
-                url: "https://cqr2aqt6.58103793.net:8443/hls/osus4s5wr2f.m3u8", 
-                logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Sky_News_Arabia_logo.svg/512px-Sky_News_Arabia_logo.svg.png" 
+                name: "beIN Sports 1", 
+                url: "http://ugeen.live:8080/live/Ugeen_VIPPXjsg8/xTW2gr/46.m3u8", 
+                logo: "https://f.top4top.io/p_3762grru10.png" 
             },
             { 
-                name: "TRT العربية", 
-                url: "https://trt-arabia.live.api.ott.net.tr/out/v1/7106655c65444399996d93427847c2a7/index.m3u8", 
-                logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/TRT_Arabi_2017.svg/512px-TRT_Arabi_2017.svg.png" 
+                name: "beIN Sports 2", 
+                url: "http://ugeen.live:8080/live/Ugeen_VIPPXjsg8/xTW2gr/47.m3u8", 
+                logo: "https://g.top4top.io/p_3762av9801.png" 
             },
             { 
-                name: "مكة المكرمة", 
-                url: "https://win.holymakkah.com/live/smil:makkah.smil/playlist.m3u8", 
-                logo: "https://cdn-icons-png.flaticon.com/512/3208/3208094.png" 
+                name: "beIN Sports 3", 
+                url: "http://ugeen.live:8080/live/Ugeen_VIPPXjsg8/xTW2gr/49.m3u8", 
+                logo: "https://h.top4top.io/p_3762eojug2.png" 
             },
             { 
-                name: "4Kids (Proxy)", 
-                url: "https://api.allorigins.win/raw?url=https://list.iptvcat.com/my_list/s/6a0b6d93c9c57a7d667e15283ff1a771.m3u8", 
-                logo: "https://i.ibb.co/V9fP6pY/4kids.png" 
+                name: "beIN Sports 4", 
+                url: "http://ugeen.live:8080/live/Ugeen_VIPPXjsg8/xTW2gr/50.m3u8", 
+                logo: "https://i.top4top.io/p_3762gavk33.png" 
+            },
+            { 
+                name: "BEIN MOVIES 1", 
+                url: "http://ugeen.live:8080/live/Ugeen_VIPPXjsg8/xTW2gr/24.m3u8", 
+                logo: "https://j.top4top.io/p_3762fiomz4.png" 
+            },
+            { 
+                name: "BEIN MOVIES 2", 
+                url: "http://ugeen.live:8080/live/Ugeen_VIPPXjsg8/xTW2gr/17.m3u8", 
+                logo: "https://j.top4top.io/p_3762fiomz4.png" 
+            },
+            { 
+                name: "BEIN MOVIES 3", 
+                url: "http://ugeen.live:8080/live/Ugeen_VIPPXjsg8/xTW2gr/18.m3u8", 
+                logo: "https://j.top4top.io/p_3762fiomz4.png" 
+            },
+            { 
+                name: "BEIN MOVIES 4", 
+                url: "http://ugeen.live:8080/live/Ugeen_VIPPXjsg8/xTW2gr/19.m3u8", 
+                logo: "https://j.top4top.io/p_3762fiomz4.png" 
+            },
+            { 
+                name: "BEIN SERIES 1", 
+                url: "http://ugeen.live:8080/live/Ugeen_VIPPXjsg8/xTW2gr/20.m3u8", 
+                logo: "https://k.top4top.io/p_3762d7moo5.png" 
+            },
+            { 
+                name: "BEIN SERIES 2", 
+                url: "http://ugeen.live:8080/live/Ugeen_VIPPXjsg8/xTW2gr/21.m3u8", 
+                logo: "https://k.top4top.io/p_3762d7moo5.png" 
             }
         ];
 
